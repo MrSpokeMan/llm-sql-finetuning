@@ -11,6 +11,13 @@ from .catastrophic_forgetting import (
     generate_report,
     print_summary_table,
     print_most_affected_table,
+    identify_benchmark,
+    extract_mmlu_subcategory,
+    filter_tasks_by_benchmark,
+    apply_noise_reduction,
+    group_mmlu_subcategories_by_degradation,
+    divide_by_category,
+    categorize_metrics_and_save,
 )
 
 __all__ = [
@@ -24,4 +31,11 @@ __all__ = [
     "generate_report",
     "print_summary_table",
     "print_most_affected_table",
+    "identify_benchmark",
+    "extract_mmlu_subcategory",
+    "filter_tasks_by_benchmark",
+    "apply_noise_reduction",
+    "group_mmlu_subcategories_by_degradation",
+    "divide_by_category",
+    "categorize_metrics_and_save",
 ]

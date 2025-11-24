@@ -1,0 +1,713 @@
+{
+  "metadata": {
+    "total_steps": 19,
+    "metric_analyzed": "acc,none",
+    "benchmark_filter": "MMLU_en",
+    "use_percentage_focus": true,
+    "apply_smoothing": true,
+    "steps": [
+      220,
+      440,
+      660,
+      880,
+      1100,
+      1320,
+      1540,
+      1760,
+      1980,
+      2200,
+      2420,
+      2640,
+      2860,
+      3080,
+      3300,
+      3520,
+      3740,
+      3960,
+      4180
+    ]
+  },
+  "step_summaries": {
+    "220": {
+      "step": 220,
+      "avg_performance": 0.25419045143855473,
+      "avg_degradation": 0.0,
+      "num_degraded_tasks": 0,
+      "total_tasks": 62,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.0,
+      "avg_backward_transfer": 0.0,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "440": {
+      "step": 440,
+      "avg_performance": 0.25900690684164024,
+      "avg_degradation": -2.1926049950471254,
+      "num_degraded_tasks": 11,
+      "total_tasks": 62,
+      "degradation_rate": 17.741935483870968,
+      "avg_retention_rate": 102.19260499504713,
+      "avg_backward_transfer": 0.004816455403085473,
+      "avg_forgetting_measure": 0.001633564536446245,
+      "catastrophic_forgetting_test": 0.001633564536446245
+    },
+    "660": {
+      "step": 660,
+      "avg_performance": 0.25717595085951156,
+      "avg_degradation": -1.5277505250641121,
+      "num_degraded_tasks": 18,
+      "total_tasks": 62,
+      "degradation_rate": 29.03225806451613,
+      "avg_retention_rate": 101.5277505250641,
+      "avg_backward_transfer": 0.0029854994209567768,
+      "avg_forgetting_measure": 0.005865684172711208,
+      "catastrophic_forgetting_test": 0.005865684172711208
+    },
+    "880": {
+      "step": 880,
+      "avg_performance": 0.25827829741856634,
+      "avg_degradation": -1.940236678468584,
+      "num_degraded_tasks": 18,
+      "total_tasks": 62,
+      "degradation_rate": 29.03225806451613,
+      "avg_retention_rate": 101.94023667846858,
+      "avg_backward_transfer": 0.004087845980011571,
+      "avg_forgetting_measure": 0.0059510795511828,
+      "catastrophic_forgetting_test": 0.0059510795511828
+    },
+    "1100": {
+      "step": 1100,
+      "avg_performance": 0.25753360066338954,
+      "avg_degradation": -1.715219744564323,
+      "num_degraded_tasks": 22,
+      "total_tasks": 62,
+      "degradation_rate": 35.483870967741936,
+      "avg_retention_rate": 101.71521974456432,
+      "avg_backward_transfer": 0.0033431492248347412,
+      "avg_forgetting_measure": 0.007986334304370351,
+      "catastrophic_forgetting_test": 0.007986334304370351
+    },
+    "1320": {
+      "step": 1320,
+      "avg_performance": 0.25697482673702676,
+      "avg_degradation": -1.3320199954962288,
+      "num_degraded_tasks": 16,
+      "total_tasks": 62,
+      "degradation_rate": 25.806451612903224,
+      "avg_retention_rate": 101.33201999549622,
+      "avg_backward_transfer": 0.002784375298472027,
+      "avg_forgetting_measure": 0.009491482083277032,
+      "catastrophic_forgetting_test": 0.009491482083277032
+    },
+    "1540": {
+      "step": 1540,
+      "avg_performance": 0.2578129536402206,
+      "avg_degradation": -1.6684307487262373,
+      "num_degraded_tasks": 16,
+      "total_tasks": 62,
+      "degradation_rate": 25.806451612903224,
+      "avg_retention_rate": 101.66843074872624,
+      "avg_backward_transfer": 0.00362250220166582,
+      "avg_forgetting_measure": 0.009826228110388711,
+      "catastrophic_forgetting_test": 0.009826228110388711
+    },
+    "1760": {
+      "step": 1760,
+      "avg_performance": 0.2542213382322661,
+      "avg_degradation": -0.1606124578013473,
+      "num_degraded_tasks": 21,
+      "total_tasks": 62,
+      "degradation_rate": 33.87096774193548,
+      "avg_retention_rate": 100.16061245780136,
+      "avg_backward_transfer": 3.088679371134812e-05,
+      "avg_forgetting_measure": 0.013638717612647466,
+      "catastrophic_forgetting_test": 0.013638717612647466
+    },
+    "1980": {
+      "step": 1980,
+      "avg_performance": 0.2561394596886554,
+      "avg_degradation": -0.9502485141971583,
+      "num_degraded_tasks": 17,
+      "total_tasks": 62,
+      "degradation_rate": 27.419354838709676,
+      "avg_retention_rate": 100.95024851419716,
+      "avg_backward_transfer": 0.0019490082501006666,
+      "avg_forgetting_measure": 0.012142843530967324,
+      "catastrophic_forgetting_test": 0.012142843530967324
+    },
+    "2200": {
+      "step": 2200,
+      "avg_performance": 0.2555704024326927,
+      "avg_degradation": -0.8225021669636129,
+      "num_degraded_tasks": 21,
+      "total_tasks": 62,
+      "degradation_rate": 33.87096774193548,
+      "avg_retention_rate": 100.82250216696362,
+      "avg_backward_transfer": 0.0013799509941379456,
+      "avg_forgetting_measure": 0.013097228669304465,
+      "catastrophic_forgetting_test": 0.013097228669304465
+    },
+    "2420": {
+      "step": 2420,
+      "avg_performance": 0.2561088338299338,
+      "avg_degradation": -0.852489340712634,
+      "num_degraded_tasks": 19,
+      "total_tasks": 62,
+      "degradation_rate": 30.64516129032258,
+      "avg_retention_rate": 100.85248934071264,
+      "avg_backward_transfer": 0.0019183823913790584,
+      "avg_forgetting_measure": 0.013162142552827992,
+      "catastrophic_forgetting_test": 0.013162142552827992
+    },
+    "2640": {
+      "step": 2640,
+      "avg_performance": 0.2561731775459987,
+      "avg_degradation": -1.0180659598624842,
+      "num_degraded_tasks": 21,
+      "total_tasks": 62,
+      "degradation_rate": 33.87096774193548,
+      "avg_retention_rate": 101.01806595986248,
+      "avg_backward_transfer": 0.0019827261074439407,
+      "avg_forgetting_measure": 0.01319103023709874,
+      "catastrophic_forgetting_test": 0.01319103023709874
+    },
+    "2860": {
+      "step": 2860,
+      "avg_performance": 0.25510210577420017,
+      "avg_degradation": -0.5274559091181262,
+      "num_degraded_tasks": 20,
+      "total_tasks": 62,
+      "degradation_rate": 32.25806451612903,
+      "avg_retention_rate": 100.52745590911813,
+      "avg_backward_transfer": 0.000911654335645417,
+      "avg_forgetting_measure": 0.014262102008897265,
+      "catastrophic_forgetting_test": 0.014262102008897265
+    },
+    "3080": {
+      "step": 3080,
+      "avg_performance": 0.25633560180563475,
+      "avg_degradation": -1.1435840247275066,
+      "num_degraded_tasks": 20,
+      "total_tasks": 62,
+      "degradation_rate": 32.25806451612903,
+      "avg_retention_rate": 101.14358402472752,
+      "avg_backward_transfer": 0.00214515036707995,
+      "avg_forgetting_measure": 0.013200278683215608,
+      "catastrophic_forgetting_test": 0.013200278683215608
+    },
+    "3300": {
+      "step": 3300,
+      "avg_performance": 0.2561454429469498,
+      "avg_degradation": -0.9226095979658835,
+      "num_degraded_tasks": 20,
+      "total_tasks": 62,
+      "degradation_rate": 32.25806451612903,
+      "avg_retention_rate": 101.07145275540867,
+      "avg_backward_transfer": 0.0019549915083950068,
+      "avg_forgetting_measure": 0.013637234799388472,
+      "catastrophic_forgetting_test": 0.013637234799388472
+    },
+    "3520": {
+      "step": 3520,
+      "avg_performance": 0.2552469566910592,
+      "avg_degradation": -0.8897842711737945,
+      "num_degraded_tasks": 21,
+      "total_tasks": 62,
+      "degradation_rate": 33.87096774193548,
+      "avg_retention_rate": 100.68836270675219,
+      "avg_backward_transfer": 0.0010565052525044018,
+      "avg_forgetting_measure": 0.014905088206227117,
+      "catastrophic_forgetting_test": 0.014905088206227117
+    },
+    "3740": {
+      "step": 3740,
+      "avg_performance": 0.2538187071996552,
+      "avg_degradation": -0.6977946161183317,
+      "num_degraded_tasks": 25,
+      "total_tasks": 62,
+      "degradation_rate": 40.32258064516129,
+      "avg_retention_rate": 100.0581176845852,
+      "avg_backward_transfer": -0.0003717442388995377,
+      "avg_forgetting_measure": 0.016333337697631057,
+      "catastrophic_forgetting_test": 0.016333337697631057
+    },
+    "3960": {
+      "step": 3960,
+      "avg_performance": 0.2567090171242141,
+      "avg_degradation": -0.8458422245120726,
+      "num_degraded_tasks": 22,
+      "total_tasks": 62,
+      "degradation_rate": 35.483870967741936,
+      "avg_retention_rate": 101.26769395108683,
+      "avg_backward_transfer": 0.002518565685659333,
+      "avg_forgetting_measure": 0.013703984825200714,
+      "catastrophic_forgetting_test": 0.013703984825200714
+    },
+    "4180": {
+      "step": 4180,
+      "avg_performance": 0.25688613023957163,
+      "avg_degradation": -0.8825985042498796,
+      "num_degraded_tasks": 21,
+      "total_tasks": 62,
+      "degradation_rate": 33.87096774193548,
+      "avg_retention_rate": 101.32736542341657,
+      "avg_backward_transfer": 0.0026956788010168557,
+      "avg_forgetting_measure": 0.014010742677585125,
+      "catastrophic_forgetting_test": 0.014010742677585125
+    }
+  },
+  "most_affected_tasks": [
+    {
+      "task_name": "global_mmlu_full_en_college_chemistry",
+      "absolute_degradation": 0.04999999999999999,
+      "relative_degradation_percent": 27.777777777777775
+    },
+    {
+      "task_name": "global_mmlu_full_en_astronomy",
+      "absolute_degradation": 0.0855263157894737,
+      "relative_degradation_percent": 26.530612244897966
+    },
+    {
+      "task_name": "global_mmlu_full_en_management",
+      "absolute_degradation": 0.03883495145631069,
+      "relative_degradation_percent": 16.66666666666667
+    },
+    {
+      "task_name": "global_mmlu_full_en_professional_psychology",
+      "absolute_degradation": 0.03431372549019607,
+      "relative_degradation_percent": 11.538461538461535
+    },
+    {
+      "task_name": "global_mmlu_full_en_college_computer_science",
+      "absolute_degradation": 0.01999999999999999,
+      "relative_degradation_percent": 7.9999999999999964
+    },
+    {
+      "task_name": "global_mmlu_full_en_formal_logic",
+      "absolute_degradation": 0.007936507936507936,
+      "relative_degradation_percent": 5.263157894736842
+    },
+    {
+      "task_name": "global_mmlu_full_en_public_relations",
+      "absolute_degradation": 0.009090909090909094,
+      "relative_degradation_percent": 4.000000000000002
+    },
+    {
+      "task_name": "global_mmlu_full_en_college_mathematics",
+      "absolute_degradation": 0.010000000000000009,
+      "relative_degradation_percent": 3.8461538461538494
+    },
+    {
+      "task_name": "global_mmlu_full_en_college_physics",
+      "absolute_degradation": 0.009803921568627472,
+      "relative_degradation_percent": 3.5714285714285787
+    },
+    {
+      "task_name": "global_mmlu_full_en_high_school_chemistry",
+      "absolute_degradation": 0.009852216748768516,
+      "relative_degradation_percent": 3.3333333333333477
+    },
+    {
+      "task_name": "global_mmlu_full_en_elementary_mathematics",
+      "absolute_degradation": 0.007936507936507964,
+      "relative_degradation_percent": 3.0303030303030405
+    },
+    {
+      "task_name": "global_mmlu_full_en_nutrition",
+      "absolute_degradation": 0.006535947712418333,
+      "relative_degradation_percent": 2.5316455696202653
+    },
+    {
+      "task_name": "global_mmlu_full_en_college_medicine",
+      "absolute_degradation": 0.005780346820809246,
+      "relative_degradation_percent": 2.2727272727272716
+    },
+    {
+      "task_name": "global_mmlu_full_en_logical_fallacies",
+      "absolute_degradation": 0.006134969325153394,
+      "relative_degradation_percent": 2.0000000000000067
+    },
+    {
+      "task_name": "global_mmlu_full_en_high_school_geography",
+      "absolute_degradation": 0.005050505050505055,
+      "relative_degradation_percent": 2.0000000000000018
+    }
+  ],
+  "overall_statistics": {
+    "mean_degradation": -1.3273654234165424,
+    "std_degradation": 10.939482547976683,
+    "max_degradation": 27.777777777777775,
+    "min_degradation": -47.61904761904762,
+    "median_degradation": 0.0
+  },
+  "mmlu_subcategory_groups": {
+    "humanities": [
+      {
+        "task_name": "global_mmlu_full_en_humanities",
+        "degradation": -1.0534846029173432
+      }
+    ],
+    "formal_logic": [
+      {
+        "task_name": "global_mmlu_full_en_formal_logic",
+        "degradation": 5.263157894736842
+      }
+    ],
+    "high_school_european_history": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_european_history",
+        "degradation": -2.173913043478255
+      }
+    ],
+    "high_school_us_history": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_us_history",
+        "degradation": 0.0
+      }
+    ],
+    "high_school_world_history": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_world_history",
+        "degradation": 0.0
+      }
+    ],
+    "international_law": [
+      {
+        "task_name": "global_mmlu_full_en_international_law",
+        "degradation": -2.22222222222223
+      }
+    ],
+    "jurisprudence": [
+      {
+        "task_name": "global_mmlu_full_en_jurisprudence",
+        "degradation": 0.0
+      }
+    ],
+    "logical_fallacies": [
+      {
+        "task_name": "global_mmlu_full_en_logical_fallacies",
+        "degradation": 2.0000000000000067
+      }
+    ],
+    "moral_disputes": [
+      {
+        "task_name": "global_mmlu_full_en_moral_disputes",
+        "degradation": -4.545454545454543
+      }
+    ],
+    "moral_scenarios": [
+      {
+        "task_name": "global_mmlu_full_en_moral_scenarios",
+        "degradation": 0.0
+      }
+    ],
+    "philosophy": [
+      {
+        "task_name": "global_mmlu_full_en_philosophy",
+        "degradation": 0.0
+      }
+    ],
+    "prehistory": [
+      {
+        "task_name": "global_mmlu_full_en_prehistory",
+        "degradation": 1.0204081632653106
+      }
+    ],
+    "professional_law": [
+      {
+        "task_name": "global_mmlu_full_en_professional_law",
+        "degradation": -2.544529262086522
+      }
+    ],
+    "world_religions": [
+      {
+        "task_name": "global_mmlu_full_en_world_religions",
+        "degradation": 0.0
+      }
+    ],
+    "other": [
+      {
+        "task_name": "global_mmlu_full_en_other",
+        "degradation": -1.5999999999999996
+      }
+    ],
+    "business_ethics": [
+      {
+        "task_name": "global_mmlu_full_en_business_ethics",
+        "degradation": -9.523809523809533
+      }
+    ],
+    "clinical_knowledge": [
+      {
+        "task_name": "global_mmlu_full_en_clinical_knowledge",
+        "degradation": 0.0
+      }
+    ],
+    "college_medicine": [
+      {
+        "task_name": "global_mmlu_full_en_college_medicine",
+        "degradation": 2.2727272727272716
+      }
+    ],
+    "global_facts": [
+      {
+        "task_name": "global_mmlu_full_en_global_facts",
+        "degradation": -3.030303030303033
+      }
+    ],
+    "human_aging": [
+      {
+        "task_name": "global_mmlu_full_en_human_aging",
+        "degradation": 0.0
+      }
+    ],
+    "management": [
+      {
+        "task_name": "global_mmlu_full_en_management",
+        "degradation": 16.66666666666667
+      }
+    ],
+    "marketing": [
+      {
+        "task_name": "global_mmlu_full_en_marketing",
+        "degradation": -3.5087719298245603
+      }
+    ],
+    "medical_genetics": [
+      {
+        "task_name": "global_mmlu_full_en_medical_genetics",
+        "degradation": -47.61904761904762
+      }
+    ],
+    "miscellaneous": [
+      {
+        "task_name": "global_mmlu_full_en_miscellaneous",
+        "degradation": 1.4018691588785164
+      }
+    ],
+    "nutrition": [
+      {
+        "task_name": "global_mmlu_full_en_nutrition",
+        "degradation": 2.5316455696202653
+      }
+    ],
+    "professional_accounting": [
+      {
+        "task_name": "global_mmlu_full_en_professional_accounting",
+        "degradation": 0.0
+      }
+    ],
+    "professional_medicine": [
+      {
+        "task_name": "global_mmlu_full_en_professional_medicine",
+        "degradation": -2.222222222222231
+      }
+    ],
+    "virology": [
+      {
+        "task_name": "global_mmlu_full_en_virology",
+        "degradation": -18.181818181818183
+      }
+    ],
+    "social_sciences": [
+      {
+        "task_name": "global_mmlu_full_en_social_sciences",
+        "degradation": 0.13368983957218478
+      }
+    ],
+    "econometrics": [
+      {
+        "task_name": "global_mmlu_full_en_econometrics",
+        "degradation": -37.500000000000014
+      }
+    ],
+    "high_school_geography": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_geography",
+        "degradation": 2.0000000000000018
+      }
+    ],
+    "high_school_government_and_politics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_government_and_politics",
+        "degradation": -16.666666666666675
+      }
+    ],
+    "high_school_macroeconomics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_macroeconomics",
+        "degradation": 1.1904761904761991
+      }
+    ],
+    "high_school_microeconomics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_microeconomics",
+        "degradation": 0.0
+      }
+    ],
+    "high_school_psychology": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_psychology",
+        "degradation": -3.2520325203252036
+      }
+    ],
+    "human_sexuality": [
+      {
+        "task_name": "global_mmlu_full_en_human_sexuality",
+        "degradation": 0.0
+      }
+    ],
+    "professional_psychology": [
+      {
+        "task_name": "global_mmlu_full_en_professional_psychology",
+        "degradation": 11.538461538461535
+      }
+    ],
+    "public_relations": [
+      {
+        "task_name": "global_mmlu_full_en_public_relations",
+        "degradation": 4.000000000000002
+      }
+    ],
+    "security_studies": [
+      {
+        "task_name": "global_mmlu_full_en_security_studies",
+        "degradation": 1.6949152542372854
+      }
+    ],
+    "sociology": [
+      {
+        "task_name": "global_mmlu_full_en_sociology",
+        "degradation": -7.999999999999997
+      }
+    ],
+    "us_foreign_policy": [
+      {
+        "task_name": "global_mmlu_full_en_us_foreign_policy",
+        "degradation": 0.0
+      }
+    ],
+    "stem": [
+      {
+        "task_name": "global_mmlu_full_en_stem",
+        "degradation": 1.3205282112845185
+      }
+    ],
+    "abstract_algebra": [
+      {
+        "task_name": "global_mmlu_full_en_abstract_algebra",
+        "degradation": -29.629629629629612
+      }
+    ],
+    "anatomy": [
+      {
+        "task_name": "global_mmlu_full_en_anatomy",
+        "degradation": -4.444444444444451
+      }
+    ],
+    "astronomy": [
+      {
+        "task_name": "global_mmlu_full_en_astronomy",
+        "degradation": 26.530612244897966
+      }
+    ],
+    "college_biology": [
+      {
+        "task_name": "global_mmlu_full_en_college_biology",
+        "degradation": 0.0
+      }
+    ],
+    "college_chemistry": [
+      {
+        "task_name": "global_mmlu_full_en_college_chemistry",
+        "degradation": 27.777777777777775
+      }
+    ],
+    "college_computer_science": [
+      {
+        "task_name": "global_mmlu_full_en_college_computer_science",
+        "degradation": 7.9999999999999964
+      }
+    ],
+    "college_mathematics": [
+      {
+        "task_name": "global_mmlu_full_en_college_mathematics",
+        "degradation": 3.8461538461538494
+      }
+    ],
+    "college_physics": [
+      {
+        "task_name": "global_mmlu_full_en_college_physics",
+        "degradation": 3.5714285714285787
+      }
+    ],
+    "computer_security": [
+      {
+        "task_name": "global_mmlu_full_en_computer_security",
+        "degradation": -3.3333333333333366
+      }
+    ],
+    "conceptual_physics": [
+      {
+        "task_name": "global_mmlu_full_en_conceptual_physics",
+        "degradation": 0.0
+      }
+    ],
+    "electrical_engineering": [
+      {
+        "task_name": "global_mmlu_full_en_electrical_engineering",
+        "degradation": 0.0
+      }
+    ],
+    "elementary_mathematics": [
+      {
+        "task_name": "global_mmlu_full_en_elementary_mathematics",
+        "degradation": 3.0303030303030405
+      }
+    ],
+    "high_school_biology": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_biology",
+        "degradation": -2.5316455696202596
+      }
+    ],
+    "high_school_chemistry": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_chemistry",
+        "degradation": 3.3333333333333477
+      }
+    ],
+    "high_school_computer_science": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_computer_science",
+        "degradation": -3.1250000000000027
+      }
+    ],
+    "high_school_mathematics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_mathematics",
+        "degradation": 0.0
+      }
+    ],
+    "high_school_physics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_physics",
+        "degradation": 0.0
+      }
+    ],
+    "high_school_statistics": [
+      {
+        "task_name": "global_mmlu_full_en_high_school_statistics",
+        "degradation": -4.347826086956514
+      }
+    ],
+    "machine_learning": [
+      {
+        "task_name": "global_mmlu_full_en_machine_learning",
+        "degradation": 0.0
+      }
+    ]
+  },
+  "category_analysis_file": "data\\reports\\smolLM_LoRA\\categories_mmlu_en.json"
+}

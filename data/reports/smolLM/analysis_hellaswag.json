@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "total_steps": 15,
+    "metric_analyzed": "acc,none",
+    "benchmark_filter": "Hellaswag",
+    "use_percentage_focus": true,
+    "apply_smoothing": true,
+    "steps": [
+      0,
+      220,
+      440,
+      660,
+      880,
+      1100,
+      1320,
+      1540,
+      1760,
+      1980,
+      2200,
+      2420,
+      2640,
+      2860,
+      3080
+    ]
+  },
+  "step_summaries": {
+    "0": {
+      "step": 0,
+      "avg_performance": 0.343258315076678,
+      "avg_degradation": 0.0,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.0,
+      "avg_backward_transfer": 0.0,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "220": {
+      "step": 220,
+      "avg_performance": 0.3434574785899223,
+      "avg_degradation": -0.05802146794312861,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.05802146794314,
+      "avg_backward_transfer": 0.00019916351324433812,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "440": {
+      "step": 440,
+      "avg_performance": 0.34256124278032263,
+      "avg_degradation": 0.20307513780099865,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.796924862199,
+      "avg_backward_transfer": -0.00069707229635535,
+      "avg_forgetting_measure": 0.0008962358095996881,
+      "catastrophic_forgetting_test": 0.0008962358095996881
+    },
+    "660": {
+      "step": 660,
+      "avg_performance": 0.342760406293567,
+      "avg_degradation": 0.14505366985785387,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.85494633014214,
+      "avg_backward_transfer": -0.0004979087831109563,
+      "avg_forgetting_measure": 0.0006970722963552944,
+      "catastrophic_forgetting_test": 0.0006970722963552944
+    },
+    "880": {
+      "step": 880,
+      "avg_performance": 0.34226249751045607,
+      "avg_degradation": 0.29010733971570773,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.7098926602843,
+      "avg_backward_transfer": -0.0009958175662219126,
+      "avg_forgetting_measure": 0.0011949810794662508,
+      "catastrophic_forgetting_test": 0.0011949810794662508
+    },
+    "1100": {
+      "step": 1100,
+      "avg_performance": 0.3437562238597889,
+      "avg_degradation": -0.1450536698578377,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.14505366985784,
+      "avg_backward_transfer": 0.0004979087831109008,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "1320": {
+      "step": 1320,
+      "avg_performance": 0.34355706034654454,
+      "avg_degradation": -0.08703220191470909,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.08703220191471,
+      "avg_backward_transfer": 0.0002987452698665627,
+      "avg_forgetting_measure": 0.00019916351324433812,
+      "catastrophic_forgetting_test": 0.00019916351324433812
+    },
+    "1540": {
+      "step": 1540,
+      "avg_performance": 0.3439553873730333,
+      "avg_degradation": -0.20307513780098246,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.20307513780098,
+      "avg_backward_transfer": 0.0006970722963552944,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "1760": {
+      "step": 1760,
+      "avg_performance": 0.3437562238597889,
+      "avg_degradation": -0.1450536698578377,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.14505366985784,
+      "avg_backward_transfer": 0.0004979087831109008,
+      "avg_forgetting_measure": 0.00019916351324439363,
+      "catastrophic_forgetting_test": 0.00019916351324439363
+    },
+    "1980": {
+      "step": 1980,
+      "avg_performance": 0.3434574785899223,
+      "avg_degradation": -0.05802146794312861,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.05802146794314,
+      "avg_backward_transfer": 0.00019916351324433812,
+      "avg_forgetting_measure": 0.0004979087831109563,
+      "catastrophic_forgetting_test": 0.0004979087831109563
+    },
+    "2200": {
+      "step": 2200,
+      "avg_performance": 0.34315873332005575,
+      "avg_degradation": -0.0928343487090155,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.97098926602843,
+      "avg_backward_transfer": -9.958175662222457e-05,
+      "avg_forgetting_measure": 0.000796654052977519,
+      "catastrophic_forgetting_test": 0.000796654052977519
+    },
+    "2420": {
+      "step": 2420,
+      "avg_performance": 0.342760406293567,
+      "avg_degradation": -0.046417174354502884,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.85494633014214,
+      "avg_backward_transfer": -0.0004979087831109563,
+      "avg_forgetting_measure": 0.0011949810794662508,
+      "catastrophic_forgetting_test": 0.0011949810794662508
+    },
+    "2640": {
+      "step": 2640,
+      "avg_performance": 0.3434574785899223,
+      "avg_degradation": -0.01740644038293212,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.05802146794314,
+      "avg_backward_transfer": 0.00019916351324433812,
+      "avg_forgetting_measure": 0.0004979087831109563,
+      "catastrophic_forgetting_test": 0.0004979087831109563
+    },
+    "2860": {
+      "step": 2860,
+      "avg_performance": 0.3441545508862776,
+      "avg_degradation": -0.04061502756018679,
+      "num_degraded_tasks": 0,
+      "total_tasks": 1,
+      "degradation_rate": 0.0,
+      "avg_retention_rate": 100.26109660574411,
+      "avg_backward_transfer": 0.0008962358095996326,
+      "avg_forgetting_measure": 0.0,
+      "catastrophic_forgetting_test": 0.0
+    },
+    "3080": {
+      "step": 3080,
+      "avg_performance": 0.3430591515634336,
+      "avg_degradation": -0.01740644038293212,
+      "num_degraded_tasks": 1,
+      "total_tasks": 1,
+      "degradation_rate": 100.0,
+      "avg_retention_rate": 99.94197853205685,
+      "avg_backward_transfer": -0.00019916351324439363,
+      "avg_forgetting_measure": 0.0010953993228440262,
+      "catastrophic_forgetting_test": 0.0010953993228440262
+    }
+  },
+  "most_affected_tasks": [
+    {
+      "task_name": "hellaswag",
+      "absolute_degradation": 0.00019916351324439363,
+      "relative_degradation_percent": 0.058021467943144785
+    }
+  ],
+  "overall_statistics": {
+    "mean_degradation": 0.058021467943144785,
+    "std_degradation": 0.0,
+    "max_degradation": 0.058021467943144785,
+    "min_degradation": 0.058021467943144785,
+    "median_degradation": 0.058021467943144785
+  }
+}
