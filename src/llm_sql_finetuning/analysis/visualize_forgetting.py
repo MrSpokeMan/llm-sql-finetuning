@@ -77,6 +77,7 @@ def plot_degradation_rate(report: Dict[str, Any], output_dir: Path) -> None:
     steps = sorted([int(k) for k in step_summaries.keys()])
 
     degradation_rates = [step_summaries[str(step)]["degradation_rate"] for step in steps]
+    num_degraded = [step_summaries[str(step)]["num_degraded_tasks"] for step in steps]
     total_tasks = step_summaries[str(steps[0])]["total_tasks"]
 
     fig, ax = plt.subplots(figsize=(14, 7))
@@ -85,19 +86,47 @@ def plot_degradation_rate(report: Dict[str, Any], output_dir: Path) -> None:
     ax2 = ax.twinx()
 
     # Plot degradation rate as line
+    ax.plot(steps, degradation_rates, marker="o", linewidth=2, markersize=6, color="#E63946", label="Degradation Rate (%)")
     ax.set_xlabel("Training Step", fontsize=12, fontweight="bold")
     ax.set_ylabel("Degradation Rate (%)", fontsize=12, fontweight="bold", color="#E63946")
     ax.tick_params(axis="y", labelcolor="#E63946")
-    ax.set_ylim([0, max(degradation_rates) * 1.1])
+    ax.set_ylim([0, max(degradation_rates) * 1.1 if degradation_rates else 100])
 
     # Plot number of degraded tasks as bars
+    # Calculate bar width based on step range, not max step value
+    # Set x-axis limits to prevent oversized figures
+    if steps:
+        step_range = max(steps) - min(steps) if len(steps) > 1 else max(steps)
+        # Use a reasonable bar width: either 2% of range or a fixed value, whichever is smaller
+        bar_width = min(step_range * 0.02 if step_range > 0 else 100, 500)
+        # Set x-axis limits with padding to prevent oversized figures
+        x_padding = step_range * 0.05 if step_range > 0 else 100
+        x_min = min(steps) - x_padding
+        x_max = max(steps) + x_padding
+    else:
+        bar_width = 100
+        x_min = 0
+        x_max = 1000
+    ax2.bar(steps, num_degraded, alpha=0.5, color="#F77F00", label="Number of Degraded Tasks", width=bar_width)
     ax2.set_ylabel("Number of Degraded Tasks", fontsize=12, fontweight="bold", color="#F77F00")
     ax2.tick_params(axis="y", labelcolor="#F77F00")
-    ax2.set_ylim([0, total_tasks * 1.1])
+    ax2.set_ylim([0, total_tasks * 1.1 if total_tasks else 1])
+    # Set x-axis limits on both axes
+    ax.set_xlim([x_min, x_max])
+    ax2.set_xlim([x_min, x_max])
 
-    # Add value labels
-    for step, rate in zip(steps, degradation_rates):
-        ax.text(step, rate + 1, f"{rate:.1f}%", ha="center", va="bottom", fontsize=9, fontweight="bold")
+    # Add value labels (only if not too many steps to avoid clutter)
+    if len(steps) <= 20:
+        for step, rate in zip(steps, degradation_rates):
+            ax.text(
+                step,
+                rate + max(degradation_rates) * 0.02 if degradation_rates else 1,
+                f"{rate:.1f}%",
+                ha="center",
+                va="bottom",
+                fontsize=9,
+                fontweight="bold",
+            )
 
     ax.set_title("Task Degradation Rate Over Training Steps", fontsize=14, fontweight="bold", pad=20)
     ax.grid(True, alpha=0.3, axis="y")
@@ -226,6 +255,7 @@ def plot_standard_metrics(report: Dict[str, Any], output_dir: Path) -> None:
     ax1.grid(True, alpha=0.3)
 
     # Plot 2: Backward Transfer (BWT) - as percentage
+    # bwt_percent is already in percentage form (calculated on line 233)
     colors_bwt = ["red" if b < 0 else "green" for b in bwt_percent]
     ax2.bar(steps, bwt_percent, color=colors_bwt, alpha=0.6, width=100)
     ax2.axhline(y=0, color="black", linestyle="-", linewidth=1)
@@ -236,8 +266,9 @@ def plot_standard_metrics(report: Dict[str, Any], output_dir: Path) -> None:
     # Skip value labels on bars to avoid clutter - values are visible from bar heights
 
     # Plot 3: Forgetting Measure (FORG) - as percentage
+    # forg_percent is already in percentage form (calculated on line 234)
     ax3.plot(steps, forg_percent, marker="s", linewidth=2.5, markersize=7, color="#E63946", label="FORG")
-    ax3.fill_between(steps, forg_percent, alpha=0.2, color="#E63946")
+    ax3.fill_between(steps, forg_percent, 0, alpha=0.2, color="#E63946")
     ax3.axhline(y=0, color="black", linestyle="--", alpha=0.5)
     ax3.set_xlabel("Training Step", fontsize=11, fontweight="bold")
     ax3.set_ylabel("Forgetting Measure (%)", fontsize=11, fontweight="bold")
@@ -246,8 +277,9 @@ def plot_standard_metrics(report: Dict[str, Any], output_dir: Path) -> None:
     ax3.grid(True, alpha=0.3)
 
     # Plot 4: Catastrophic Forgetting Test (CBT) - as percentage
+    # cbt_percent is already in percentage form (calculated on line 235)
     ax4.plot(steps, cbt_percent, marker="^", linewidth=2.5, markersize=7, color="#F77F00", label="CBT")
-    ax4.fill_between(steps, cbt_percent, alpha=0.2, color="#F77F00")
+    ax4.fill_between(steps, cbt_percent, 0, alpha=0.2, color="#F77F00")
     ax4.axhline(y=0, color="black", linestyle="--", alpha=0.5)
     ax4.set_xlabel("Training Step", fontsize=11, fontweight="bold")
     ax4.set_ylabel("Catastrophic Forgetting Test (%)", fontsize=11, fontweight="bold")
@@ -275,7 +307,7 @@ def plot_degradation_distribution(report: Dict[str, Any], output_dir: Path) -> N
 
     # Plot 2: Degradation over steps (percentage)
     # Values in JSON are in decimal form, need to multiply by 100 to get percentage
-    avg_degradations = [step_summaries[str(step)]["avg_degradation"] * 100 for step in steps]
+    avg_degradations = [step_summaries[str(step)]["avg_degradation"] for step in steps]
     ax2.plot(steps, avg_degradations, marker="o", linewidth=2, markersize=6, color="#2E86AB")
     ax2.fill_between(steps, avg_degradations, 0, alpha=0.3, where=[d > 0 for d in avg_degradations], color="red")
     ax2.fill_between(steps, avg_degradations, 0, alpha=0.3, where=[d <= 0 for d in avg_degradations], color="green")
@@ -325,9 +357,17 @@ def plot_degradation_distribution(report: Dict[str, Any], output_dir: Path) -> N
     ax4.set_ylim([0, max(degradation_rates) * 1.1])
     ax4.grid(True, alpha=0.3)
 
-    # Add value labels
-    for step, rate in zip(steps, degradation_rates):
-        ax4.text(step, rate + 1, f"{rate:.1f}%", ha="center", va="bottom", fontsize=8)
+    # Add value labels (only if not too many steps to avoid clutter and oversized figures)
+    if len(steps) <= 20:
+        for step, rate in zip(steps, degradation_rates):
+            ax4.text(
+                step,
+                rate + max(degradation_rates) * 0.02 if degradation_rates else 1,
+                f"{rate:.1f}%",
+                ha="center",
+                va="bottom",
+                fontsize=8,
+            )
 
     plt.tight_layout()
     output_path = output_dir / "degradation_distribution.png"
@@ -372,7 +412,7 @@ def plot_comprehensive_dashboard(report: Dict[str, Any], output_dir: Path) -> No
     # 3. Average Degradation (middle left) - percentage
     # Values in JSON are in decimal form, need to multiply by 100 to get percentage
     ax3 = fig.add_subplot(gs[1, 0])
-    avg_degradation = [step_summaries[str(step)]["avg_degradation"] * 100 for step in steps]
+    avg_degradation = [step_summaries[str(step)]["avg_degradation"] for step in steps]
     colors = ["#D62828" if d > 0 else "#06A77D" for d in avg_degradation]
     ax3.bar(steps, avg_degradation, color=colors, alpha=0.6, width=100)
     ax3.axhline(y=0, color="black", linestyle="-", linewidth=1)
@@ -473,7 +513,7 @@ def plot_benchmark_comparison(reports: Dict[str, Dict[str, Any]], output_dir: Pa
         report = reports[benchmark]
         step_summaries = report["step_summaries"]
         steps = sorted([int(k) for k in step_summaries.keys()])
-        avg_degradation = [step_summaries[str(step)]["avg_degradation"] * 100 for step in steps]
+        avg_degradation = [step_summaries[str(step)]["avg_degradation"] for step in steps]
         ax3.plot(steps, avg_degradation, marker="^", linewidth=2, markersize=5, label=benchmark)
     ax3.axhline(y=0, color="black", linestyle="--", alpha=0.5, linewidth=1)
     ax3.set_xlabel("Training Step", fontsize=11, fontweight="bold")
@@ -488,7 +528,7 @@ def plot_benchmark_comparison(reports: Dict[str, Dict[str, Any]], output_dir: Pa
     final_stats = {}
     for benchmark in available_benchmarks:
         report = reports[benchmark]
-        final_stats[benchmark] = report["overall_statistics"]["mean_degradation"] * 100
+        final_stats[benchmark] = report["overall_statistics"]["mean_degradation"]
 
     colors = ["#2E86AB", "#E63946", "#F77F00", "#06A77D"]
     bars = ax4.bar(final_stats.keys(), final_stats.values(), color=colors[: len(final_stats)], alpha=0.7)
